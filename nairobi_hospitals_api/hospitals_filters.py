@@ -12,7 +12,7 @@ class NairobiHealthFacilitiesFilter(GeoFilterSet):
 
     def get_facilities_by_subcounty(self, queryset, name, value):
         query_ = NairobiSubCounties.objects.filter(pk=value)
-        
+
         if query_:
             obj = query_.first()
             return queryset.filter(geom__within=obj.geom)

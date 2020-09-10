@@ -13,11 +13,10 @@ class NairobiSubCountiesSerializer(GeoFeatureModelSerializer):
 
 class NairobiHealthFacilitiesSerializer(GeoFeatureModelSerializer):
 
-    distance = serializers.CharField()
 
     class Meta:
         model = NairobiHealthFacilities
         fields = '__all__'
         geo_field = 'geom'
-        read_only_fields = ['distance']
+
 

@@ -102,6 +102,8 @@ class NairobiHealthFacilities(models.Model):
     water_sour = models.CharField(max_length=254, blank=True, null=True)
     geom = models.GeometryField(blank=True, null=True)
 
+
+
     class Meta:
         db_table = 'nairobi_health_facilities'
 
@@ -113,6 +115,15 @@ class NairobiSubCounties(models.Model):
 
     class Meta:
         db_table = 'nairobi_sub_counties'
+
+
+class PointcloudFormats(models.Model):
+    pcid = models.IntegerField(primary_key=True)
+    srid = models.IntegerField(blank=True, null=True)
+    schema = models.TextField(blank=True, null=True)
+
+    class Meta:
+        db_table = 'pointcloud_formats'
 
 
 
